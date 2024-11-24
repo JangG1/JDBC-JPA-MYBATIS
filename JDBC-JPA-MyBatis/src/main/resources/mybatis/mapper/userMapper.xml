@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- userMapper.xml -->
+<mapper namespace="com.Practice.mapper.UserMapper">
+
+    <!-- 사용자 삽입 -->
+    <insert id="insertUser">
+        INSERT INTO users (name, email) VALUES (#{name}, #{email})
+    </insert>
+
+    <!-- 모든 사용자 조회 -->
+    <select id="selectUsers" resultType="com.Practice.JDBC.MyBatis.User">
+        SELECT * FROM users
+    </select>
+
+    <!-- 사용자 이메일 수정 -->
+    <update id="updateUser">
+        UPDATE users SET email = #{email} WHERE name = #{name}
+    </update>
+
+    <!-- 사용자 삭제 -->
+    <delete id="deleteUser">
+        DELETE FROM users WHERE name = #{name}
+    </delete>
+
+</mapper>
