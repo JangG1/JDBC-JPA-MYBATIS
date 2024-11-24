@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- AccountMapper.xml -->
+<mapper namespace="com.Practice.mapper.accountMapper">
+
+    <insert id="insertAccount" parameterType="com.Practice.JDBC.Tran.Account">
+        INSERT INTO account (name, email, balance)
+        VALUES (#{name}, #{email}, #{balance})
+    </insert>
+
+    <select id="getAccountById" resultType="com.Practice.JDBC.Tran.Account">
+        SELECT * FROM account WHERE id = #{id}
+    </select>
+
+    <select id="getAllAccounts" resultType="com.Practice.JDBC.Tran.Account">
+        SELECT * FROM account
+    </select>
+    
+    <update id="updateAccount" parameterType="com.Practice.JDBC.Tran.Account">
+        UPDATE account
+        SET email = #{email}, balance = #{balance}
+        WHERE name = #{name}
+    </update>
+
+    <delete id="deleteAccount" parameterType="com.Practice.JDBC.Tran.Account">
+        DELETE FROM account WHERE name = #{name}
+    </delete>
+
+</mapper>
+

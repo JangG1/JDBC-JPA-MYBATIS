@@ -18,7 +18,8 @@ import lombok.ToString;
 public class User {
     private int id;
     private String name;
-    
+	private String email;
+	
     public int getId() {
 		return id;
 	}
@@ -37,7 +38,7 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	private String email;
+
 
     // Lombok 어노테이션이 적용되었으므로, 별도로 getter, setter가 자동으로 생성됨
 }
